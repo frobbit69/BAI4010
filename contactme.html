@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>contactme</title>
+    <style>
+      form {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="certificate.html">Certificate</a></li>
+      <li><a class="active" href="contactme.html">Contact Me</a></li>
+    </ul>
+    <p>You may ask me any question here:</p>
+    <form
+      action="contactme.html"
+      style="margin: 20px"
+      onsubmit="alert('Your question is received. Thank you')"
+    >
+      <div style="display: flex; justify-content: center; width: 100%">
+        <textarea
+          id="question"
+          name="question"
+          rows="4"
+          placeholder="Enter here..."
+          required
+          style="
+            width: 90%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+          "
+        ></textarea>
+      </div>
+      <br />
+      <div style="display: flex; justify-content: center; width: 100%">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>

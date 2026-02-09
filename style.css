@@ -1,0 +1,61 @@
+body {
+  width: 800px;
+  /* to centre page on screen*/
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(250, 235, 215, 0.3);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: center;
+  font-weight: normal;
+  padding: 7px;
+  width: 25%;
+}
+p {
+  text-align: justify;
+}
+.button {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: gray;
+}
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+ul.menu li a {
+  display: block;
+  color: #666666;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+ul.menu li a:hover:not(.active) {
+  background-color: #dddddd;
+}
+
+ul li a.active {
+  background-color: darkcyan;
+  color: rgba(255, 255, 255, 0.89);
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home Page</title>
+  </head>
+
+  <body>
+    <ul class="menu">
+      <li><a class="active" href="home.html">Home</a></li>
+      <li><a href="certificate.html">Certificate</a></li>
+      <li><a href="contactme.html">Contact Me</a></li>
+    </ul>
+    <div>
+      <h1 style="text-align: center">Home Page</h1>
+      <img src="Media/my_picture.JPG" style="width: 100px; height: auto" />
+      <h2>Name</h2>
+      <p>Cheung Hing Yeung</p>
+      <h2>Education</h2>
+      <p>Lingnan University - Data Science Year 3 Student</p>
+      <h3>Undergraduate Summary</h3>
+      <table>
+        <tr>
+          <td></td>
+          <td>Attempted</td>
+          <td>Earned</td>
+          <td>GPA</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <label for="termSelect">Term:</label>
+            <select id="termSelect" onchange="displayGPA()">
+              <option value="select_term">Select Term</option>
+              <option value="term1_2324">Term 1 23-24</option>
+              <option value="term2_2324">Term 2 23-24</option>
+              <option value="term1_2425">Term 2 24-25</option>
+              <option value="term2_2425">Term 2 24-25</option>
+              <option value="term1_2526">Term 1 25-26</option>
+            </select>
+          </td>
+          <td id="attempted"></td>
+          <td id="earned"></td>
+          <td id="gpa-display"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Overall:</td>
+          <td>75.0</td>
+          <td>75.0</td>
+          <td>3.57</td>
+        </tr>
+      </table>
+      <br />
+      <input
+        type="button"
+        class="button"
+        onclick="location.href = 'certificate.html'"
+        value="My certificate"
+      />
+      <h2>Hobbies</h2>
+      <ul>
+        <li>Swimming</li>
+        <li>Practicing handwriting</li>
+        <li>Guitar</li>
+      </ul>
+
+      <script>
+        const gpaData = {
+          select_term: { attempted: "", earned: "", gpa: "" },
+          term1_2324: { attempted: 15.0, earned: 15.0, gpa: 3.67 },
+          term2_2324: { attempted: 15.0, earned: 15.0, gpa: 3.4 },
+          term1_2425: { attempted: 15.0, earned: 15.0, gpa: 3.47 },
+          term2_2425: { attempted: 15.0, earned: 15.0, gpa: 3.67 },
+          term1_2526: { attempted: 15.0, earned: 15.0, gpa: 3.67 },
+        };
+
+        function displayGPA() {
+          const termSelect = document.getElementById("termSelect").value;
+          const attemptedCell = document.getElementById("attempted");
+          const earnedCell = document.getElementById("earned");
+          const gpaDisplay = document.getElementById("gpa-display");
+
+          const selectedTerm = gpaData[termSelect];
+
+          attemptedCell.innerText = selectedTerm.attempted;
+          earnedCell.innerText = selectedTerm.earned;
+          gpaDisplay.innerText = selectedTerm.gpa;
+        }
+
+        displayGPA();
+      </script>
+    </div>
+  </body>
+</html>
